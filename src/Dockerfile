@@ -2,6 +2,9 @@ FROM piotrminkina/debian:lenny
 MAINTAINER Piotr Minkina <projects[i.am.spammer]@piotrminkina.pl>
 
 
+ADD bin/policy-rc.d /usr/sbin/policy-rc.d
+ADD bin/start-stop-daemon /sbin/start-stop-daemon
+
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
     busybox \
